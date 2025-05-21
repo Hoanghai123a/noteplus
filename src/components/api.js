@@ -25,11 +25,21 @@ const logTime = async (method, url, fn) => {
   }
 };
 
-const getHeaders = (token) => {
-  return token
+// const getHeaders = (token) => {
+//   return token
+//     ? {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       }
+//     : {};
+// };
+const getHeaders = (token = null) => {
+  const authToken = token || localStorage.getItem("access_token");
+  return authToken
     ? {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${authToken}`,
         },
       }
     : {};

@@ -11,6 +11,8 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null); // nên là null thay vì chuỗi rỗng
+  console.log("user login", user);
+
   const { login } = useContext(UserContext);
   const handleLogin = async (values) => {
     setLoading(true);

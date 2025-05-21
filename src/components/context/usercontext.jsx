@@ -12,6 +12,7 @@ const UserProvider = ({ children }) => {
     if (token && username) {
       setUser({ username, token });
     }
+    // return token ? { token, username } : null;
   }, []);
 
   const login = (data) => {
