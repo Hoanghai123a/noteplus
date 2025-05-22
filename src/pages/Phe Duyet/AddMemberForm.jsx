@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
-import api from "../components/api";
+import api from "../../components/api";
 
 const AddMemberForm = ({ groupId }) => {
   const [loading, setLoading] = useState(false);
@@ -20,6 +20,13 @@ const AddMemberForm = ({ groupId }) => {
 
   return (
     <Form layout="vertical" onFinish={onFinish}>
+      <Form.Item
+        name="id"
+        label="Id người dùng"
+        rules={[{ required: true }]}
+      >
+        <Input placeholder="Nhập ID người dùng" />
+      </Form.Item>
       <Form.Item
         name="username"
         label="Tên người dùng"

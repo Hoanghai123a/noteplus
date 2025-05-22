@@ -11,10 +11,12 @@ import Settings from "./pages/Setting";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./routes/PrivateRoute";
 import Contact from "./pages/Contact";
-import Note from "./pages/Note";
+import Note from "./pages/Phe Duyet/Note";
 import LoginForm from "./pages/Login";
 import RegisterForm from "./pages/Register";
-import GroupDetail from "./pages/GroupDetail";
+import GroupDetail from "./pages/Phe Duyet/GroupDetail";
+import PheDuyet from "./pages/Phe Duyet/PheDuyet";
+import Group from "./pages/Phe Duyet/Group";
 
 function App() {
   return (
@@ -42,6 +44,7 @@ function App() {
             />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/pheduyet" element={<PheDuyet />} />
             <Route path="*" element={<NotFound />} />
 
             <Route
@@ -65,6 +68,14 @@ function App() {
               element={
                 // <PrivateRoute>
                 <Note />
+                // </PrivateRoute>
+              }
+            />
+            <Route
+              path="/group"
+              element={
+                // <PrivateRoute>
+                <Group />
                 // </PrivateRoute>
               }
             />

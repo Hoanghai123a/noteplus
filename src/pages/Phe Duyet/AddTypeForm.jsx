@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input, Button, message } from "antd";
-import api from "../components/api";
+import api from "../../components/api";
 
 const AddTypeForm = ({ groupId }) => {
   const [loading, setLoading] = useState(false);
@@ -26,6 +26,13 @@ const AddTypeForm = ({ groupId }) => {
         rules={[{ required: true }]}
       >
         <Input />
+      </Form.Item>
+      <Form.Item
+        name="description"
+        label="Mô tả"
+        rules={[{ required: true }]}
+      >
+        <Input.TextArea rows={4} />
       </Form.Item>
       <Button type="primary" htmlType="submit" loading={loading}>
         Tạo

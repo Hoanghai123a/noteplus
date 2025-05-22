@@ -13,6 +13,8 @@ import {
 import { MdOutlineNoteAlt } from "react-icons/md";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../components/context/UserContext";
+import { GrGroup } from "react-icons/gr";
+import { FcApprove } from "react-icons/fc";
 
 const { Header } = Layout;
 
@@ -60,6 +62,11 @@ const Navbar = () => {
       key: "/notes",
       label: "Notes",
     },
+    {
+      icon: <GrGroup />,
+      key: "/group",
+      label: "Group",
+    },
     // {
     //   icon: <InfoCircleOutlined />,
     //   key: "/about",
@@ -71,6 +78,7 @@ const Navbar = () => {
     //   label: "Contact",
     // },
     {
+      icon: <FcApprove />,
       key: "/pheduyet",
       label: "Phê Duyệt",
     },
@@ -156,24 +164,14 @@ const Navbar = () => {
                 mode="horizontal"
                 selectedKeys={[location.pathname]}
                 items={menuItems}
-                // onClick={({ key }) => navigate(key)}
-                // items={menuItems.map((item) => ({
-                //   ...item,
-                //   label: (
-                //     <span className="flex items-center gap-1">
-                //       {item.icon}
-                //       {item.label}
-                //     </span>
-                //   ),
-                // }))}
                 onClick={({ key }) => navigate(key)}
               />
               {/* )} */}
             </div>
           </div>
-
           {/* Right side (auth or avatar) */}
           <div className="hidden md:flex items-center space-x-4">
+            <span>Hi {localStorage.getItem("username")}</span>
             <div className="flex items-center gap-1">
               <BulbOutlined className="text-yellow-500" />
               <Switch
